@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+h1 {
+	font-size: 250%;
+	line-height: 100%;
+}
+
+p {
+	font-size: 125%;
+	line-height: 100%;
+}
+
+input {
+	font-size: 125%;
+}
+
+@layer base {
+
+	input[type='number']::-webkit-outer-spin-button,
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number'] {
+		-webkit-appearance: none;
+		margin: 0;
+		-moz-appearance: textfield !important;
+	}
+}

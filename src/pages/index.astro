@@ -1,0 +1,64 @@
+---
+import Navbar from "../components/Navbar.svelte";
+import Searchbar from "../components/Searchbar.svelte";
+
+import { AstroFont } from "astro-font";
+
+import "../styles/main.css";
+
+const isdev = process.env.NODE_ENV === "development";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Astro</title>
+
+		<AstroFont
+			config={[
+				{
+					name: "BankPrinter",
+					src: [
+						{
+							style: "inherit",
+							weight: "inherit",
+							path: "./fonts/BankPrinter.ttf",
+						},
+					],
+					preload: true,
+					fallback: "sans-serif",
+					display: "swap",
+					selector: ".BankPrinter",
+					basePath: isdev ? "./" : "../client/",
+				},
+				{
+					name: "StretchPro",
+					src: [
+						{
+							style: "inherit",
+							weight: "inherit",
+							path: "./fonts/StretchPro.otf",
+						},
+					],
+					preload: true,
+					fallback: "sans-serif",
+					display: "swap",
+					selector: ".StretchPro",
+					basePath: isdev ? "./" : "../client/fonts/",
+				},
+			]}
+		/>
+	</head>
+	<body class="antialiased bg-[#1f1f1f] text-white">
+		<main class="max-w-[800px] container mx-auto">
+			<section class="m-4 mt-[10vh] sm:mt-[20vh]">
+				<h1 class="flex flex-col justify-center">
+					<span class="StretchPro italic">Hello</span>
+					<span class="StretchPro text-yellow-200">World</span>
+				</h1>
+			</section>
+		</main>
+	</body>
+</html>

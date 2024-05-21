@@ -1,0 +1,26 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.10",
+    "@astrojs/node": "^8.2.5",
+    "@astrojs/svelte": "^5.4.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "@playform/compress": "^0.0.4",
+    "astro": "^4.7.1",
+    "astro-compressor": "^0.4.1",
+    "astro-critters": "^2.1.7",
+    "astro-font": "^0.0.81",
+    "svelte": "^4.2.15",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
+  }
+}
