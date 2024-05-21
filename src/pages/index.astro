@@ -2,7 +2,8 @@
 import Navbar from "../components/Navbar.svelte";
 import Searchbar from "../components/Searchbar.svelte";
 
-import { AstroFont } from "astro-font";
+import {join} from 'node:path';
+import {AstroFont} from 'astro-font';
 
 import "../styles/main.css";
 
@@ -17,38 +18,36 @@ const isdev = process.env.NODE_ENV === "development";
 		<title>Astro</title>
 
 		<AstroFont
-			config={[
-				{
-					name: "BankPrinter",
-					src: [
-						{
-							style: "inherit",
-							weight: "inherit",
-							path: "./fonts/BankPrinter.ttf",
-						},
-					],
-					preload: true,
-					fallback: "sans-serif",
-					display: "swap",
-					selector: ".BankPrinter",
-					basePath: isdev ? "./" : "../client/",
-				},
-				{
-					name: "StretchPro",
-					src: [
-						{
-							style: "inherit",
-							weight: "inherit",
-							path: "./fonts/StretchPro.otf",
-						},
-					],
-					preload: true,
-					fallback: "sans-serif",
-					display: "swap",
-					selector: ".StretchPro",
-					basePath: isdev ? "./" : "../client/fonts/",
-				},
-			]}
+		config={[
+			{
+				name: "BankPrinter",
+				src: [
+					{
+						style: "inherit",
+						weight: "inherit",
+						path: join(process.cwd(), 'public', 'fonts', 'BankPrinter.ttf')
+					},
+				],
+				preload: true,
+				fallback: "sans-serif",
+				display: "swap",
+				selector: ".BankPrinter",
+			},
+			{
+				name: "StretchPro",
+				src: [
+					{
+						style: "inherit",
+						weight: "inherit",
+						path: join(process.cwd(), 'public', 'fonts', 'StretchPro.otf')
+					},
+				],
+				preload: true,
+				fallback: "sans-serif",
+				display: "swap",
+				selector: ".StretchPro",
+			},
+		]}
 		/>
 	</head>
 	<body class="antialiased bg-[#1f1f1f] text-white">
